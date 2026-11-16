@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+:root {
+  /* Discord Colors */
+  --discord-bg: #1e1f22;
+  --discord-sidebar: #202225;
+  --discord-channel-sidebar: #2f3136;
+  --discord-hover: #36393f;
+  --discord-active: #40444b;
+  --discord-blurple: #5865f2;
+  --discord-blurple-hover: #4752c4;
+  --discord-text: #dcddde;
+  --discord-text-muted: #72767d;
+  --discord-border: #292b2f;
+  --discord-input: #40444b;
+  --discord-green: #3ba55c;
+  --discord-yellow: #faa61a;
+  --discord-red: #ed4245;
+
+  /* Tailwind CSS Variables */
+  --background: var(--discord-bg);
+  --foreground: var(--discord-text);
+  --card: var(--discord-sidebar);
+  --card-foreground: var(--discord-text);
+  --popover: var(--discord-channel-sidebar);
+  --popover-foreground: var(--discord-text);
+  --primary: var(--discord-blurple);
+  --primary-foreground: #ffffff;
+  --secondary: var(--discord-hover);
+  --secondary-foreground: var(--discord-text);
+  --muted: var(--discord-input);
+  --muted-foreground: var(--discord-text-muted);
+  --accent: var(--discord-active);
+  --accent-foreground: var(--discord-text);
+  --destructive: var(--discord-red);
+  --destructive-foreground: #ffffff;
+  --border: var(--discord-border);
+  --input: var(--discord-input);
+  --ring: var(--discord-blurple);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: var(--radius);
+
+  /* Discord specific colors */
+  --color-discord-bg: var(--discord-bg);
+  --color-discord-sidebar: var(--discord-sidebar);
+  --color-discord-channel-sidebar: var(--discord-channel-sidebar);
+  --color-discord-hover: var(--discord-hover);
+  --color-discord-active: var(--discord-active);
+  --color-discord-blurple: var(--discord-blurple);
+  --color-discord-blurple-hover: var(--discord-blurple-hover);
+  --color-discord-text: var(--discord-text);
+  --color-discord-text-muted: var(--discord-text-muted);
+  --color-discord-border: var(--discord-border);
+  --color-discord-input: var(--discord-input);
+  --color-discord-green: var(--discord-green);
+  --color-discord-yellow: var(--discord-yellow);
+  --color-discord-red: var(--discord-red);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--discord-border);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--discord-text-muted);
+  background-clip: content-box;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--discord-blurple);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--discord-blurple);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideInFromRight {
+  animation: slideInFromRight 0.2s ease-out;
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 0.2s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Custom utility classes */
+.bg-discord-bg { background-color: var(--discord-bg); }
+.bg-discord-sidebar { background-color: var(--discord-sidebar); }
+.bg-discord-channel-sidebar { background-color: var(--discord-channel-sidebar); }
+.bg-discord-hover { background-color: var(--discord-hover); }
+.bg-discord-active { background-color: var(--discord-active); }
+.bg-discord-blurple { background-color: var(--discord-blurple); }
+.bg-discord-input { background-color: var(--discord-input); }
+
+.text-discord-text { color: var(--discord-text); }
+.text-discord-text-muted { color: var(--discord-text-muted); }
+.text-discord-blurple { color: var(--discord-blurple); }
+.text-discord-green { color: var(--discord-green); }
+.text-discord-yellow { color: var(--discord-yellow); }
+.text-discord-red { color: var(--discord-red); }
+
+.border-discord-border { border-color: var(--discord-border); }
+.border-discord-blurple { border-color: var(--discord-blurple); }
+
+.placeholder-discord-text-muted::placeholder { color: var(--discord-text-muted); }
+
+/* LiveKit video styles */
+.lk-participant {
+  background: var(--discord-input);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lk-participant video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Toast styles */
+.toast {
+  background: var(--discord-channel-sidebar);
+  border: 1px solid var(--discord-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Tooltip */
+.tooltip {
+  background: var(--discord-channel-sidebar);
+  border: 1px solid var(--discord-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--discord-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
